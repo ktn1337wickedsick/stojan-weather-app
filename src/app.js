@@ -3,9 +3,10 @@ const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
 
-
 const forecast = require('./utils/forecast.js')
 const geocode = require('./utils/geocode.js')
+
+const port = process.env.PORT || 3000
 
 const app = express()
 //SETING UP DIRECTORIES
@@ -84,6 +85,6 @@ app.get('*', (req,res)=>{
 })
 
 
-app.listen(3000,() =>{
-  console.log('Server is up and running on port 3000')
+app.listen(port,() =>{
+  console.log(`Server is up and running on port ${port}`)
 })
